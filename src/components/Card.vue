@@ -1,9 +1,9 @@
 <template>
-  <div class="card">
+  <div class="carta">
     <img class="img-fluid mb-3" :src="info.poster" alt="" />
-    <h4>{{ info.title }}</h4>
-    <div>{{ info.author }}</div>
-    <div class="fw-bold">{{ info.year }}</div>
+    <h5>{{ info.title }}</h5>
+    <div class="little-text">{{ info.author }}</div>
+    <div class="little-text">{{ info.year }}</div>
   </div>
 </template>
 
@@ -16,14 +16,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h1 {
-  font-weight: 700;
-}
-h4 {
-  text-transform: capitalize;
-}
-img {
-  border-radius: 50%;
-  box-shadow: 0 0 6px 3px rgba(#000, 0.15);
+.carta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   height: 200px;
+  //   width: 200px;
+  padding: 20px;
+  background-color: #2e3a46;
+
+  img {
+    height: 100px;
+  }
+  h5 {
+    color: white;
+    text-transform: uppercase;
+  }
+  .little-text {
+    color: grey;
+  }
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="flex">
     <div
       v-for="(card, index) in cardList"
       :key="index"
-      class="col-6 col-md-4 col-lg-3 mb-5"
+      class="col-6 col-md-4 col-lg-3 my-5"
     >
       <Card :info="card" />
     </div>
@@ -45,4 +45,11 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+@import "@/style/mixins";
+.flex {
+  @include center-content();
+  @include center();
+  flex-wrap: wrap;
+}
+</style>
