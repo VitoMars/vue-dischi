@@ -1,14 +1,18 @@
 <template>
-  <div class="header">
-    <img class="img" src="@/assets/logo.png" alt="" />
+  <div class="main">
+    <CardList />
   </div>
 </template>
 
 <script>
+import CardList from "@/components/CardList.vue";
 export default {
-  name: "Header",
+  name: "Main",
   props: {
     msg: String,
+  },
+  components: {
+    CardList,
   },
 };
 </script>
@@ -16,15 +20,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/style/mixins.scss";
-.header {
-  @include align-center();
-  height: 10vh;
+.main {
+  height: 90vh;
   width: 100%;
-  padding: 0px 20px;
-  background-color: #2e3a46;
-  .img {
-    height: 70%;
-  }
+  background-color: #1e2d3b;
 }
 h3 {
   margin: 40px 0 0;
