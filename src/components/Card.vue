@@ -1,7 +1,7 @@
 <template>
   <div class="carta">
     <img class="img-fluid mb-3" :src="info.poster" alt="" />
-    <h5>{{ info.title }}</h5>
+    <div class="title">{{ info.title }}</div>
     <div class="little-text">{{ info.author }}</div>
     <div class="little-text">{{ info.year }}</div>
   </div>
@@ -20,19 +20,23 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  //   height: 200px;
-  //   width: 200px;
+  height: 300px;
+  width: 200px;
   padding: 20px;
   background-color: #2e3a46;
 
   img {
     height: 100px;
   }
-  h5 {
+  .title {
+    font-size: 18px;
+    padding-bottom: 20px;
     color: white;
     text-transform: uppercase;
+    text-align: center;
   }
   .little-text {
+    text-align: center;
     color: grey;
   }
 }
