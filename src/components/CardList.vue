@@ -1,10 +1,6 @@
 <template>
   <div class="flex">
-    <div
-      v-for="(card, index) in cardList"
-      :key="index"
-      class="col-6 col-md-4 col-lg-3 my-5"
-    >
+    <div class="cardList" v-for="(card, index) in cardList" :key="index">
       <Card :info="card" />
     </div>
   </div>
