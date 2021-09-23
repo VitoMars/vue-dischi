@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <div class="cardList" v-for="(card, index) in cardList" :key="index">
+    <div class="cardList" v-for="(card, index) in getCards()" :key="index">
       <Card :info="card" />
     </div>
   </div>
@@ -13,6 +13,7 @@ export default {
   name: "CardList",
   props: {
     msg: String,
+    filter: String,
   },
   components: {
     Card,
@@ -26,6 +27,17 @@ export default {
   created() {
     this.getCard();
   },
+  // computed: {
+  //   filteredCardList() {
+  //     let filteredList = this.cardList.filter((genere) => {
+  //       if (cardList.genre == genere) {
+  //         return true;
+  //       }
+  //       return false;
+  //     });
+  //     return filteredList;
+  //   },
+  // },
   methods: {
     getCard() {
       axios
@@ -36,6 +48,18 @@ export default {
         .catch((err) => {
           console.log("Error ", err);
         });
+    },
+    getCards() {
+      if (!this.filter) {
+        return this.cardList;
+      }
+      let filteredList = this.cardList.filter((card) => {
+        if (card.genre == this.filter) {
+          return true;
+        }
+        return false;
+      });
+      return filteredList;
     },
   },
 };

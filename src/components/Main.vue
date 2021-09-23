@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <Select />
-    <CardList />
+    <Select @perform="getFilter" />
+    <CardList :filter="filteredList" />
   </div>
 </template>
 
@@ -16,6 +16,16 @@ export default {
   components: {
     CardList,
     Select,
+  },
+  data() {
+    return {
+      filteredList: "",
+    };
+  },
+  methods: {
+    getFilter(value) {
+      this.filteredList = value;
+    },
   },
 };
 </script>
