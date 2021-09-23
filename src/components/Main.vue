@@ -1,11 +1,13 @@
 <template>
   <div class="main">
+    <Select />
     <CardList />
   </div>
 </template>
 
 <script>
 import CardList from "@/components/CardList.vue";
+import Select from "./Select.vue";
 export default {
   name: "Main",
   props: {
@@ -13,6 +15,7 @@ export default {
   },
   components: {
     CardList,
+    Select,
   },
 };
 </script>
